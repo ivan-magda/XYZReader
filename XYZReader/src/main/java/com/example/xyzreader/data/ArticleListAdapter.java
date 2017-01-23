@@ -16,7 +16,7 @@ import com.example.xyzreader.ui.view.DynamicHeightNetworkImageView;
 public final class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.ViewHolder> {
 
     public interface OnClickHandler {
-        void onClick(int position);
+        void onClick(int position, long itemId);
     }
 
     private Cursor mCursor;
@@ -82,7 +82,7 @@ public final class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAd
         @Override
         public void onClick(View v) {
             if (mOnClickHandler != null) {
-                mOnClickHandler.onClick(getAdapterPosition());
+                mOnClickHandler.onClick(getAdapterPosition(), getItemId());
             }
         }
 

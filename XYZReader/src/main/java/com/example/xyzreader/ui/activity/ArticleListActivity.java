@@ -17,7 +17,6 @@ import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleListAdapter;
 import com.example.xyzreader.data.ArticleLoader;
 import com.example.xyzreader.data.UpdaterService;
-import com.example.xyzreader.data.persistence.ItemsContract.Items;
 
 /**
  * An activity representing a list of Articles. This activity has different presentations for
@@ -110,9 +109,11 @@ public class ArticleListActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void onClick(int position) {
-        startActivity(new Intent(Intent.ACTION_VIEW,
-                Items.buildItemUri(position)));
+    public void onClick(int position, long itemId) {
+        Intent intent = new Intent(this, ArticleDetailActivity.class);
+        intent.putExtra(ArticleDetailActivity.EXTRA_ITEM_POSITION_INDEX, position);
+        intent.putExtra(ArticleDetailActivity.EXTRA_ITEM_ID, itemId);
+        startActivity(intent);
     }
 
 }

@@ -1,4 +1,6 @@
 <resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+
     <!-- detail -->
     <dimen name="detail_title_text_size">32sp</dimen>
     <dimen name="detail_body_text_size">22sp</dimen>
@@ -15,7 +17,10 @@
 
     <dimen name="margin_default">4dp</dimen>
     <dimen name="padding_default">4dp</dimen>
+
     <dimen name="tv_padding_default">16dp</dimen>
     <dimen name="rv_padding">16dp</dimen>
+
+    <dimen name="activity_detail_app_bar_height">300dp</dimen>
 
 </resources>
