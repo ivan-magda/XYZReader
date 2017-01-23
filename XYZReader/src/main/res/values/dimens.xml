@@ -6,6 +6,16 @@
 
     <dimen name="fab_elevation">2dp</dimen>
     <dimen name="fab_press_translation_z">6dp</dimen>
+
     <dimen name="fab_margin">24dp</dimen>
+    <dimen name="main_app_bar_height">128dp</dimen>
+    <dimen name="margin_title_expanded_start">72dp</dimen>
+
+    <dimen name="iv_dynamic_height_default">100dp</dimen>
+
+    <dimen name="margin_default">4dp</dimen>
+    <dimen name="padding_default">4dp</dimen>
+    <dimen name="tv_padding_default">16dp</dimen>
+    <dimen name="rv_padding">16dp</dimen>
 
 </resources>
