@@ -43,7 +43,7 @@
             android:exported="false" />
 
         <provider
-            android:name=".data.ItemsProvider"
+            android:name=".data.persistence.ItemsProvider"
             android:authorities="com.example.xyzreader"
             android:exported="false" />
     </application>

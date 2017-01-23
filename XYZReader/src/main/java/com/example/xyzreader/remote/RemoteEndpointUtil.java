@@ -14,13 +14,14 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class RemoteEndpointUtil {
-    private static final String TAG = "RemoteEndpointUtil";
+
+    private static final String TAG = RemoteEndpointUtil.class.getSimpleName();
 
     private RemoteEndpointUtil() {
     }
 
     public static JSONArray fetchJsonArray() {
-        String itemsJson = null;
+        String itemsJson;
         try {
             itemsJson = fetchPlainText(Config.BASE_URL);
         } catch (IOException e) {
@@ -30,8 +31,8 @@ public class RemoteEndpointUtil {
 
         // Parse JSON
         try {
-            JSONTokener tokener = new JSONTokener(itemsJson);
-            Object val = tokener.nextValue();
+            JSONTokener tokenizer = new JSONTokener(itemsJson);
+            Object val = tokenizer.nextValue();
             if (!(val instanceof JSONArray)) {
                 throw new JSONException("Expected JSONArray");
             }
@@ -43,14 +44,14 @@ public class RemoteEndpointUtil {
         return null;
     }
 
-    static String fetchPlainText(URL url) throws IOException {
+    private static String fetchPlainText(URL url) throws IOException {
         OkHttpClient client = new OkHttpClient();
 
         Request request = new Request.Builder()
                 .url(url)
                 .build();
-
         Response response = client.newCall(request).execute();
+
         return response.body().string();
     }
 }

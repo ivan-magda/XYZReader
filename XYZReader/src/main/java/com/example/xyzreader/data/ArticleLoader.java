@@ -4,10 +4,13 @@ import android.content.Context;
 import android.content.CursorLoader;
 import android.net.Uri;
 
+import com.example.xyzreader.data.persistence.ItemsContract;
+
 /**
  * Helper for loading a list of articles or a single article.
  */
 public class ArticleLoader extends CursorLoader {
+
     public static ArticleLoader newAllArticlesInstance(Context context) {
         return new ArticleLoader(context, ItemsContract.Items.buildDirUri());
     }
